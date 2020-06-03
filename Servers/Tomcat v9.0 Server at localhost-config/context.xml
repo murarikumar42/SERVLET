@@ -15,16 +15,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 --><!-- The contents of this file will be loaded for each web application --><Context>
-	<Resource name="DsJndi"
-            auth="Container"
-            type="javax.sql.DataSource"
-            username="batch9am"
-            password="manager"
-            driverClassName="oracle.jdbc.driver.OracleDriver"
-            url="jdbc:oracle:thin:@localhost:1521:xe"
-            maxTotal="20"
-            maxIdle="10"
-            maxWaitMillis="-1"/>
+	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="10" maxTotal="20" maxWaitMillis="-1" name="DsJndi" password="manager" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:xe" username="batch9am"/>
     <!-- Default set of monitored resources. If one of these changes, the    -->
     <!-- web application will be reloaded.                                   -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
@@ -32,7 +23,7 @@
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
 
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
-    
+    <!--
     <Manager pathname="" />
-    
+    -->
 </Context>
